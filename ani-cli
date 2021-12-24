@@ -6,7 +6,7 @@ player_fn="mpv"
 
 prog="ani-cli"
 logfile="${XDG_CACHE_HOME:-$HOME/.cache}/ani-hsts"
-base_url="https://www2.gogoanimes.org"
+base_url=$(curl -s -L -o /dev/null -w "%{url_effective}\n" https://ww2.gogoanimes.org)
 
 c_red="\033[1;31m"
 c_green="\033[1;32m"
